@@ -1,6 +1,14 @@
 
-body{
-	background-image:url("./assets/images/castle.jpg");
+.jumbotron{
+	background-color: lightblue;
+}
+
 };
 
+.timer {
 
+};
+
+.doneButton{
+
+}
