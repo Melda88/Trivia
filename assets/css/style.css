@@ -1,14 +1,12 @@
 
 .jumbotron{
 	background-color: lightblue;
+	align-content: center;
 }
 
-};
-
-.timer {
-
-};
-
-.doneButton{
-
+.display-3{
+	text-align: center;
+}
+.introButton{
+	text-align: center;
 }
