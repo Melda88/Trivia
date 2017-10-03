@@ -1,51 +1,50 @@
-function check () {
+function check() {
 
-	var question1 = document.quiz.question1.value;
-	var question2 = document.quiz.question2.value;
-	var question3 = document.quiz.question3.value;
-	var question4 =	document.quiz.question4.value;
-	var question5 =	document.quiz.question5.value;
-	var correct = 0;
-
-
-		if (question1 == "Ghost") {
-			correct++;
-	}	
-		if (question2 == "Walkers") {
-			correct++;
-	}	
-		if (question3 == "Assassins") {
-
-	}
-		if (question4 == "Three") {
-			correct++;
-	}
-		if (question5 == "Daenerys") {
-			correct++;
-	}
+    var question1 = document.quiz.question1.value;
+    var question2 = document.quiz.question2.value;
+    var question3 = document.quiz.question3.value;
+    var question4 = document.quiz.question4.value;
+    var question5 = document.quiz.question5.value;
+    var correct = 0;
 
 
-var messages = ["You've won the game of Trivia!","You played....well","Wrong...take the black oath and try again."];
-var pictures = ["assets/images/Cheers.gif","assets/images/Almost.gif","assets/images/Wrong.gif"]
-	var range;
+    if (question1 == "Ghost") {
+        correct++;
+    }
+    if (question2 == "Walkers") {
+        correct++;
+    }
+    if (question3 == "Assassins") {
 
-	if (correct < 1) {
-		range = 2;
-	}
+    }
+    if (question4 == "Three") {
+        correct++;
+    }
+    if (question5 == "Daenerys") {
+        correct++;
+    }
 
-	if (correct > 0 && correct <3) {
-		range = 1;
-	}
 
-	if (correct > 2) {
-		range = 0;
-	}
-	
+    var messages = ["You've won the game of Trivia!", "You played....well", "Wrong...take the black oath and try again."];
+    var pictures = ["assets/images/Cheers.gif", "assets/images/Almost.gif", "assets/images/Wrong.gif"]
+    var range;
 
-document.getElementById("afterSubmit").style.visibility = "visible";
+    if (correct < 1) {
+        range = 2;
+    }
 
-document.getElementById("message").innerHTML = messages[range];
-document.getElementById("numberCorrect").innerHTML = "You got  " +  correct + " correct.";
-document.getElementById("picture").src = pictures[range];	
+    if (correct > 0 && correct < 3) {
+        range = 1;
+    }
+
+    if (correct > 2) {
+        range = 0;
+    }
+
+
+    document.getElementById("afterSubmit").style.visibility = "visible";
+
+    document.getElementById("message").innerHTML = messages[range];
+    document.getElementById("numberCorrect").innerHTML = "You got  " + correct + " correct.";
+    document.getElementById("picture").src = pictures[range];
 }
-
