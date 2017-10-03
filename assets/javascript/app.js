@@ -1,98 +1,51 @@
-function populate () {
-	console.log(quiz);
-	if (quiz.isEnded()) {
-		console.log('test');
+function check () {
+
+	var question1 = document.quiz.question1.value;
+	var question2 = document.quiz.question2.value;
+	var question3 = document.quiz.question3.value;
+	var question4 =	document.quiz.question4.value;
+	var question5 =	document.quiz.question5.value;
+	var correct = 0;
+
+
+		if (question1 == "Ghost") {
+			correct++;
+	}	
+		if (question2 == "Walkers") {
+			correct++;
+	}	
+		if (question3 == "Assassins") {
+
+	}
+		if (question4 == "Three") {
+			correct++;
+	}
+		if (question5 == "Daenerys") {
+			correct++;
+	}
+
+
+var messages = ["You've won the game of Trivia!","You played....well","Wrong...take the black oath and try again."];
+var pictures = ["assets/images/Cheers.gif","assets/images/Almost.gif","assets/images/Wrong.gif"]
+	var range;
+
+	if (correct < 1) {
+		range = 2;
+	}
+
+	if (correct > 0 && correct <3) {
+		range = 1;
+	}
+
+	if (correct > 2) {
+		range = 0;
 	}
 	
-	else {
-		//Questions not
-		var element = document.getElementById("questions");
 
-		element.innerHTML = quiz.getQuestionIndex().text;
-		console.log(quiz);
-		//Choices should appear here
-		var choices = quiz.getQuestionIndex();
-		console.log(choices);
-		for (var i = 0; i < choices.length; i++) {
-			var element = document.getElementById("choice" + i );
-			element.innerHTML = choices [i];
+document.getElementById("afterSubmit").style.visibility = "visible";
 
-		}
-	}
+document.getElementById("message").innerHTML = messages[range];
+document.getElementById("numberCorrect").innerHTML = "You got  " +  correct + " correct.";
+document.getElementById("picture").src = pictures[range];	
 }
-
-var questions=[
-	
-	new Question ("What is the name of John Snow's Dire-Wolf?", ["Puppers","Snow","Ghost","Nymeria"], "Ghost"),
-	new Question ("What is the name often used when referring to the undead?", ["White-Walkers","The Horde","Living Dead","The Skinny Dudes"], "White-Walkers"),
-	new Question ("Who are the faceless men of Braavos?", ["Assassins","Pirates","Famous Cooks","Prisoners"], "Assassins"),
-	new Question ("How many times has Sanza Stark been married?", ["Once","Three Times","Never been married","Twice"], "Three Times"),
-	new Question ("Who is the mother of dragons?", ["Arya Stark","Daenerys Targaryen","Cersei Lannister","Sansa Stark"], "Daenerys Targaryen"),
-
-];
-
-
-
-
-function Question(text, choices, answer) {
-	this.text=text;
-	this.choices=choices;
-	this.answer = answer;	
-}
-
-
-Question.prototype.correctAnswer = function(choice) {
-	return choice === this.answer;
-	
-}
-
-function Quiz(questions) {
-	this.score = 0;
-	this.questions = questions;
-	this.questionIndex = 0;
-}
-
-
-Quiz.prototype.getQuestionIndex= function() {
-	return this.questions [this.questionIndex];
-}
-
-Quiz.prototype.isEnded = function () {
-	return this.questions.length === this.questionIndex;
-}
-
-Quiz.prototype.guess = function (answer) {
-	this.questionIndex;
-
-	if(this.questionIndex().correctAnswer(answer)) {
-		this.score;
-	}
-}
-
-var quiz = new Quiz("questions");
-populate();
-
-//timer goes here ( not working???)
-function startTimer(duration, display) {
-    var timer = duration, minutes, seconds;
-    setInterval(function () {
-        minutes = parseInt(timer / 60, 10)
-        seconds = parseInt(timer % 60, 10);
-
-        minutes = minutes < 10 ? "0" + minutes : minutes;
-        seconds = seconds < 10 ? "0" + seconds : seconds;
-
-        display.textContent = minutes + ":" + seconds;
-
-        if (--timer < 0) {
-            timer = duration;
-        }
-    }, 1000);
-}
-
-window.onload = function () {
-    var threeMinutes = 60 * 4,
-        display = document.querySelector('#time');
-    startTimer(fourMinutes, display);
-};
 
