@@ -16,18 +16,18 @@ function check() {
         correct++;
     }
     if (question3 == "Assassins") {
-
+        correct++;
     }
     if (question4 == "Three") {
         correct++;
     }
-    if (question5 == "Daenerys") {
+    if (question5 == "Dani") {
         correct++;
     }
 
 
     var messages = ["You've won the game of Trivia!", "You played....well", "Wrong...take the black oath and try again."];
-    var pictures = ["assets/images/Cheers.gif", "assets/images/Almost.gif", "assets/images/Wrong.gif"]
+    var pictures = ["assets/images/Cheers.gif", "assets/images/samblink.gif", "assets/images/Almost.gif"]
     var range;
 
     if (correct < 1) {
