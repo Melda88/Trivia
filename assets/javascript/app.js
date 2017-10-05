@@ -8,6 +8,7 @@ function check() {
     var correct = 0;
 
 
+
     if (question1 == "Ghost") {
         correct++;
     }
@@ -40,6 +41,10 @@ function check() {
     if (correct > 2) {
         range = 0;
     }
+
+
+
+        
 
 
     document.getElementById("afterSubmit").style.visibility = "visible";
